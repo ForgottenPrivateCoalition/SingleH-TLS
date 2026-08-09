@@ -1,0 +1,85 @@
+[H[2J[3J============================================================
+        CRYPTOGRAPHIC HEADER AUTOMATED TEST SUITE
+============================================================
+Executable : ./crypttest.elf
+Input      : Hello, World!
+Output     : /home/wevex/temp/crypto-tests
+============================================================
+
+1. SHA-256
+============================================================
+OpenSSL : dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+Your    : dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+   PASS
+
+2. HMAC-SHA256
+============================================================
+OpenSSL : bbd643f252983642df9149b068af1b592e06949239ea49c3b727506ea45719ac
+Your    : bbd643f252983642df9149b068af1b592e06949239ea49c3b727506ea45719ac
+   PASS
+
+3. AES-128-GCM
+============================================================
+Key   : 48656c6c6f2c20576f726c6421000000
+Nonce : 1d3039393a7975023a273931
+Your ciphertext : 3ca59fcf787a76e19894be4319
+Your tag        : 2c2e40e7801965fff1b16454770af56b
+AES-128-GCM output format: valid
+
+NOTE:
+OpenSSL 'enc' cannot be used as a reliable AES-GCM
+reference on this OpenSSL version.
+
+Ciphertext length : 13 bytes
+Expected length   : 13 bytes
+Authentication tag: 16 bytes
+
+AES implementation output was recorded in:
+    /home/wevex/temp/crypto-tests/AES-128-GCM
+   PASS
+
+4. ASN.1 DER
+============================================================
+OpenSSL DER : 040d48656c6c6f2c20576f726c6421
+Your DER    : 040d48656c6c6f2c20576f726c6421
+Decoded     : Hello, World!
+Encoding : valid
+Decoding : valid
+   PASS
+
+5. RSA-2048
+============================================================
+Your hash    : dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+OpenSSL hash : dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+OpenSSL sign/verify:
+Verified OK
+   PASS
+
+6. X25519
+============================================================
+Private key : 48656c6c6f2c20576f726c642100000000000000000000000000000000000000
+Your private : 48656c6c6f2c20576f726c642100000000000000000000000000000000000000
+Your public  : f547e03c41adff67ac5fe0c38f8ebaaa93dc5e718aa6f98d5f760cbc63051c2e
+Private key format : valid
+Public key format  : valid
+   PASS
+
+============================================================
+                         RESULTS
+============================================================
+
+PASS  SHA-256
+PASS  HMAC-SHA256
+PASS  AES-128-GCM
+PASS  ASN.1-DER
+PASS  RSA-2048
+PASS  X25519
+
+------------------------------------------------------------
+Total: 6 passed, 0 failed
+------------------------------------------------------------
+
+Test files:
+    /home/wevex/temp/crypto-tests
+
+ALL TESTS PASSED
